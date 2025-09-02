@@ -1,5 +1,5 @@
 ---
-title: "Boston dynamics 와 Toyota 협업업"
+title: "Boston dynamics 와 Toyota 협업"
 date: 2025-09-02
 tags: [LBM, Humanoid, GPU, VLA, Toyota_Ri]
 toc: true
