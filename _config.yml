@@ -117,7 +117,7 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "I am Undegraduate in Sogang University, interested in AI, Robotics applications in Space"
   location         : "Seoul, South Korea"
-  email            :kowooknasa137@gmail.com
+  email            : kowooknasa137@gmail.com
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
