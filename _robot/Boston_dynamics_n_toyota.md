@@ -4,7 +4,7 @@ date: 2025-09-02
 tags: [LBM, Humanoid, GPU, VLA, Toyota_Ri]
 toc: true
 ---
-#하나의 모델로 하부까지 구동 가능한 휴머노이드 제어
+# 하나의 모델로 하부까지 구동 가능한 휴머노이드 제어
 
 https://bostondynamics.com/blog/large-behavior-models-atlas-find-new-footing/
 에서 보면 사람이 움직이는 대로 휴머노이드 로봇이 움직인다.
