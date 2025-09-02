@@ -17,7 +17,6 @@ boston dynamics 는 기존에 mpc 에 강한 회사였다고 함.
 여기서 LBM 을 처음 들었다.
 Large Behavior model 이라는 뜻으로, Toyota 에서 강함.
 
-# 이미지
 {% include figure
    image_path="/assets/images/robot/diffusion-transformer.png"
    alt="Diffusion Transformer pipeline"
