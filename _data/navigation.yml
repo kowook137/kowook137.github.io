@@ -6,6 +6,8 @@ main:
     url: /ai/
   - title: "Robot"
     url: /robot/
+  - title: "Career"
+    url: /career/
   - title: "Categories"
     url: /categories/
   - title: "Tags"

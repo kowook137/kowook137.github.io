@@ -241,6 +241,9 @@ collections:
   robot:
     output: true
     permalink: /robot/:name/
+  career:
+    output: true
+    permalink: /career/:name/
 
 
 # Pagination with jekyll-paginate
@@ -350,6 +353,16 @@ defaults:
   - scope:
       path: ""
       type: robot
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  # _career collection
+  - scope:
+      path: ""
+      type: career
     values:
       layout: single
       author_profile: true
