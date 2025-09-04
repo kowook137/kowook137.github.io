@@ -15,7 +15,8 @@ layout: archive
 {% assign ai_entries = site.ai %}
 {% assign robot_entries = site.robot %}
 {% assign career_entries = site.career %}
-{% assign combined_entries = posts | concat: ai_entries | concat: robot_entries | concat: career_entries %}
+{% assign major_entries = site.major %}
+{% assign combined_entries = posts | concat: ai_entries | concat: robot_entries | concat: career_entries | concat: major_entries %}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">

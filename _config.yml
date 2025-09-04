@@ -244,6 +244,9 @@ collections:
   career:
     output: true
     permalink: /career/:name/
+  major:
+    output: true
+    permalink: /major/:name/
 
 
 # Pagination with jekyll-paginate
@@ -363,6 +366,16 @@ defaults:
   - scope:
       path: ""
       type: career
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  # _major collection
+  - scope:
+      path: ""
+      type: major
     values:
       layout: single
       author_profile: true
