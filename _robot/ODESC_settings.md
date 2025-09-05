@@ -1,11 +1,9 @@
 ---
-title: "ODESC 및 BLDC 모터 세팅팅"
+title: "ODESC 및 BLDC 모터 세팅"
 date: 2025-09-05
 tags: [Robot, Humanoid, frimware, BLDC, ODESC]
 toc: true
 ---
-# ODESC 와  BLDC 모터
-
 
 {% include figure
    image_path="/assets/images/robot/ODESC.png"
