@@ -12,8 +12,7 @@ LLM 이 학습하는 텍스트 데이터들은 보통 일반적이지 않은 사
 
 이것을 reporting bias 라 한다.
 
-때문에 text 만을 학습한 LLM은 성능의 한계가 있다.
-
+때문에 text 만을 학습한 LLM은 성능의 한계가 있다. 이 병목현상을 VLM 같은 multimodal ai 모델이 해결할 수 있을 것이다. AGI 는 multimodal model 의 형태일 것이다.
 ## Image CoT
 diffusion 기반의 모델들은 image 편집을 잘 못한다. instruction을 잘 따라가지 못 한다.
 특정 부분만 바꿔달라고 하면 다른 부분까지 다 바꿔버리는 경우 발생.
@@ -29,9 +28,17 @@ LLM 모델이 매우 커지면, 자꾸 추론 과정을 생략해서 오히려 �
 
 nanno bannana 는 autoregressive 로 예상이 된다.
 
+
+
 ### Xiao jun podcast
 https://youtu.be/vWrYHvSRz0s?si=Djz80Cr5ED5R0C2B
 
 ## Qwen image edit 모델
 https://huggingface.co/Qwen/Qwen-Image-Edit
 
+{% include figure
+   image_path="/assets/images/ai/qwen_image_edit.png"
+   alt="image_edit"
+   caption="Qwen image edit model"
+   class="align-center"
+%}
