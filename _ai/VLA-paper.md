@@ -1,5 +1,5 @@
 ---
-title: "VLA 개선을 위해 참조해야 할 논문들들"
+title: "VLA 개선을 위해 참조해야 할 논문들"
 date: 2025-09-16
 tags: [AI, Robot, Physical AI]
 toc: true
