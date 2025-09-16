@@ -10,6 +10,8 @@ main:
     url: /career/
   - title: "Major Study"
     url: /major/
+  - title: "Plan"
+    url: /plan/
   - title: "Categories"
     url: /categories/
   - title: "Tags"

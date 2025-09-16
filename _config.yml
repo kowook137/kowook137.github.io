@@ -247,6 +247,9 @@ collections:
   major:
     output: true
     permalink: /major/:name/
+  plan:
+    output: true
+    permalink: /plan/:name/
 
 
 # Pagination with jekyll-paginate
@@ -376,6 +379,16 @@ defaults:
   - scope:
       path: ""
       type: major
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  # _plan collection
+  - scope:
+      path: ""
+      type: plan
     values:
       layout: single
       author_profile: true
