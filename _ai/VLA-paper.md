@@ -25,9 +25,16 @@ https://qwen.ai/blog?id=4074cca80393150c248e508aa62983f9cb7d27cd&from=research.l
  ```
 
 ## CoT-VLA
- 기존에 VLA 에서 CoT 를 텍스트로 하던 것과 달리, vision 데이터를 활용해서 CoT 를 하는 것. 이 아키텍처를 활용하면 기존에 액션이 없는 비전 데이터를 활용할 수 있어서 학습할 수 있는 데이터의 양이 획기적으로 늘어난다.
+ 기존에 VLA 에서 CoT 를 텍스트로 하던 것과 달리, vision 데이터를 활용해서 CoT 를 하는 것. 이 아키텍처를 활용하면 기존에 액션이 없는 비전 데이터를 활용할 수 있어서 학습할 수 잇는 데이터의 양이 획기적으로 늘어난다.
 
-```
+ ```
 https://arxiv.org/abs/2503.22020
-```
+ ```
+ 
+## VLA-Adaptor
+ VLA-adpator 라는 아키텍처. 이 또한 VLA 모델의 경량화에 초점이 맞추어져 있다.오픈소스, 논문 공개.
 
+```
+https://arxiv.org/abs/2509.09372
+https://vla-adapter.github.io/
+```
