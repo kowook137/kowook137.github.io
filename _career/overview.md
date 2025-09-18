@@ -8,6 +8,14 @@ toc: true
 ## LG 로봇 관련, AI 관련 인턴십 링크
 https://www.lgcns.com/kr/careers/recruit-info?type=intern
 
+## 여기 LG 는 로보틱스 따로 뽑네
+https://careers.lg.com/apply/detail?id=1000781
+
+## 한화 에어로스페이스 채용연계형 인턴
+https://www.hanwhain.com/web/apply/notification/view.do?rtSeq=16894
+
+이건 4-1 전까지 수료한 사람만 지원 가능
+
 ## 관심 분야
 - AI
 - Robotics
