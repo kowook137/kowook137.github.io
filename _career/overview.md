@@ -1,5 +1,5 @@
 ---
-title: "커리어 될 만한 공모전, 인턴십, 대외활동동"
+title: "커리어 될 만한 공모전, 인턴십, 대외활동"
 date: 2025-09-02
 tags: [Career]
 toc: true
@@ -40,3 +40,6 @@ https://www.hanwhain.com/web/apply/notification/view.do?rtSeq=16894
 ## ETRI, KIST 연구 인턴
 - 꼭 4학년이 아니더라도 ETRI, KIST 에서 연구인턴 할 수 있다.
 - 해외 연구기관과 연관된 경우가 많다.
+
+## 창의 ICT 융합 경진대회
+https://www.allforyoung.com/posts/70992
