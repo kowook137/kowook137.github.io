@@ -1,5 +1,5 @@
 ---
-title: "커리어 될 만한 공모전, 프로그램"
+title: "커리어 될 만한 공모전, 인턴십, 대외활동동"
 date: 2025-09-02
 tags: [Career]
 toc: true
