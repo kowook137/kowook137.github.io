@@ -13,7 +13,7 @@ toc: true
 ### gitub
  https://github.com/Epilepsy-Alert-Project
 
- ## papers search
+## papers search
 
 아래의 링크는 open wearable 의 링크. 전자 회로 설계부터 펌웨어 코드까지 공개되어 있는 오픈소스.
  ```
