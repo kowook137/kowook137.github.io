@@ -3,6 +3,7 @@ title: "로봇에서 base, ee 좌표계 변환 매커니즘/구현"
 date: 2025-09-26
 tags: [Dynamics, robotics]
 toc: true
+mathjax: true
 ---
 # Base, ee 좌표계 변환 매커니즘
 
