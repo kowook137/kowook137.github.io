@@ -1,0 +1,18 @@
+{% comment %}
+  MathJax configuration for rendering LaTeX-style math when `mathjax: true` is set
+  on a page or collection item. Loaded from jsDelivr CDN to keep the bundle light.
+{% endcomment %}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [["$", "$"], ["\\(", "\\)"]],
+      displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+      ignoreHtmlClass: "tex2jax_ignore"
+    }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
