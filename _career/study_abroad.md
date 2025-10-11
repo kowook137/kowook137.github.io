@@ -25,3 +25,6 @@ R01 같은 건 grant 나간 걸 서치할 수 있는 웹사이트 존재.
 
 
 > https://www.mccormick.northwestern.edu/computer-science/news-events/news/articles/2024/phd-application-feedback-program-aims-to-increase-diversity-in-cs-graduate-programs.html
+
+## 추천서
+미국은 인맥사회임. 가고자 하는 랩실과 관련되어 있는 사람, 적어도 미국 교수의 추천서가 있어야 국내 교수의 추천서보다 훨씬 유리하게 작용함.
