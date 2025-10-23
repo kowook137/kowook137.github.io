@@ -28,3 +28,9 @@ R01 같은 건 grant 나간 걸 서치할 수 있는 웹사이트 존재.
 
 ## 추천서
 미국은 인맥사회임. 가고자 하는 랩실과 관련되어 있는 사람, 적어도 미국 교수의 추천서가 있어야 국내 교수의 추천서보다 훨씬 유리하게 작용함.
+
+## ref 가 되는 분들
+
+> https://computing.mit.edu/news/nine-mit-phd-students-named-amazon-ai-fellows/
+
+여기 있는 fellow 선정된 분들 career 보면 참고 될 만한 사항들이 많은 것 같다.

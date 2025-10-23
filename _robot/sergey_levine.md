@@ -13,4 +13,6 @@ podcast 듣고 여기 정리해놓자.
 
 세르게이 레빈은 로봇이 스스로 행동하면서 스스로 데이터를 수집해서 학습하는 것을 특이점으로 보고 있다는 것 같다.
 
-CoT-VLA 이것도 봐야 한다.
+아래는 Sergey Levin 의 Deep RL course at Berkeley
+> https://rail.eecs.berkeley.edu/deeprlcourse/
+
