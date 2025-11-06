@@ -8,7 +8,7 @@ toc: true
 
 ## 3D printer
 
- Bambu lab A1 mini 를 활용하여 문서를 출력하는 방법에 대한 설명.
+ Bambu lab A1 mini 를 활용하여 문서를 출력하는 방법에 대한 가이드임.
 
 ## Step by Step
 ### 파일 준비
