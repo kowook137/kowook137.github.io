@@ -1,5 +1,5 @@
 ---
-title: "Sergey Levin"
+title: "Bambu lab A1 mini guide"
 date: 2025-11-06
 tags: [robot, Hardware, Bambulab A1]
 toc: true
