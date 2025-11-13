@@ -1,6 +1,6 @@
 ---
 title: "기재기 팀플 중간보고서"
-date: 2025-10-24
+date: 2025-11-13
 tags: [major study]
 toc: true
 ---
@@ -73,6 +73,7 @@ https://kbhmask.co.kr/%ec%9d%98%ec%95%bd%ec%99%b8%ed%92%88-%eb%a7%88%ec%8a%a4%ed
 * 장단점 요약
 
 # 6 생산 공정 (멜트 블로운, 스펀본드) -unwoven
+* 공장 인터뷰 추가
 
 # 7. 시스템 통합 관점(레이어 스택 설계) - 고욱
 
@@ -84,6 +85,7 @@ https://kbhmask.co.kr/%ec%9d%98%ec%95%bd%ec%99%b8%ed%92%88-%eb%a7%88%ec%8a%a4%ed
 # 7. 개선 방안(Reasoned Recommendations) - 고욱, 팀원의 rough한 의견 취합.
 
 > ‘왜’까지 필수적으로 포함할 것. 어떤 벤치마크 개선 할 건데?
+* 공장 인터뷰 추가
 
 ## 7.1 정전 성능의 내습·내열 안정화
 
