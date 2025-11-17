@@ -5,7 +5,6 @@ tags: [Robot, Humanoid]
 toc: true
 ---
 
-# OpenVLA 논문 상세 요약 (Markdown)
 
 ## 1. 개요
 
