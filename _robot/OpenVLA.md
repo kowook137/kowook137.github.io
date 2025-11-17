@@ -5,7 +5,6 @@ tags: [Robot, Humanoid]
 toc: true
 ---
 
-
 ## 1. 개요
 
 OpenVLA는 **7B 파라미터 규모의 오픈소스 Vision-Language-Action(VLA)** 모델로, 로봇 조작(Manipulation) 작업에서 강력한 범용성(generalization)을 보이는 정책(policy) 모델이다. 기존 구글 RT-2-X와 같은 VLA 모델은 폐쇄적이거나 파인튜닝이 어렵다는 한계가 있었지만, OpenVLA는 **모델 가중치, 학습 코드, 데이터 파이프라인을 모두 공개**하여 누구나 재현 및 확장이 가능하도록 설계되었다.
