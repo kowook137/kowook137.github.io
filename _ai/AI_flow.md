@@ -17,6 +17,7 @@ toc: true
  (5) 그 결과를 제어(Action)으로 연결한다.
 
  ## 2. Line By Line
+ 
  ### (1) World 는 연속적, 구조적 Manifold 이다.
 
 현실 세계의 상태는 ℝⁿ 전체를 차지하지 않는다.
