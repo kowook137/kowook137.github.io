@@ -51,9 +51,32 @@ $$
 위의 것들은  
 $$
 p(future|past, goal) \rightarrow p(action/trajectory)
-$$
+$$  
+___
 
-즉, distribution &rarr; distribution 의 Mapping을 구현하는 방법의 차이.
+### Transformer
+
+Transformer 는 Token 으로 embedding 된 것들을 attention 으로 모두 sequential 하게 고려해서 분포를 생성함.  
+따라서 long-time horizon task 를 처리하는 것에 적합하다.
+로봇의 temporal & semantic structure 를 다루는 high level 제어에 강함.  
+___
+
+### Diffusion, Flow Matching
+
+Diffusion은 확률적 역과정(SDE)를 학습함. Flow Matching 은 결정론적 확률 문포 흐름(ODE)를 학습함.  
+ 
+| 구분     | Diffusion   | Flow Matching |
+| ------ | ----------- | ------------- |
+| 수학적 형태 | SDE (확률적)   | ODE (결정론적)    |
+| 불확실성   | 매우 강함       | 구조적으로 약함      |
+| 샘플링    | 느림          | 빠름            |
+| 제어 해석  | 간접적         | 직접적           |
+| 로봇 적합성 | 복잡한 접촉, 다양성 | 안정적 연속 제어     |   
+---
+
+
+결국 diribution &rarr; distribution 의 Mapping을 구현하는 방법의 차이.  
+___
 
 ### (5) Action 으로 출력함.
 
