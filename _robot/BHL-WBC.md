@@ -68,6 +68,10 @@ M6C12 BLDC Drone Motor, 5010 BLDC Drone motor.
 
  - 위의 이유로 Long-Time manipulation, locomotion 에 한계 존재.
 
+ - Locomotion 을 위한 코드가 단순한 RL 이기 때문에 부드러운 걷기 동작, Whole body control 은 아예 안 된다. 이런 부분들에 대한 연구를 해 볼 수 있을 것 같다.  
+ 예컨대 보행 알고리즘에 Model Base를 추가한다던가, 최적화를 추가한다거나.
+
+
  ---
 
 #### 배운 것들
