@@ -36,7 +36,9 @@ toc: true
 (3) Joint positions, velocity: 현재 자세, joint 속도  
 
 - 학습 target  
-MLP 로 $(\text{state}, \text{goal}) \mapsto \text{joint command}$ 를 학습함.
+- 학습 target  
+MLP 로 `(state, goal) -> joint command` 를 학습함.
+
 
 - inference Rate  
 MLP 로 근사된 policy 는 25Hz 로 돌아감. MBC 사용 X.  
@@ -65,6 +67,7 @@ M6C12 BLDC Drone Motor, 5010 BLDC Drone motor.
  - Gearbox 가 3D-printed 인데, BLDC 모터의 열로 인해서 Mechanical property 가 보장되지 않음.  
 
  - 위의 이유로 Long-Time manipulation, locomotion 에 한계 존재.
+
  ---
 
 #### 배운 것들
