@@ -69,7 +69,7 @@ MolmoAct 는 action bin 으로 할당할 vocal tail 을 선정할 때, 다음의
 3) 유사한 action 과 vocal tail token 의 monotonic 한 mapping  
 
 {% include figure
-   image_path="/assets/images/robot/action_token_subst.png"
+   image_path="/assets/images/robot/action_token_subst.jpg"
    alt="action token subst"
    caption="MolmoAct 의 Action Token 할당 방식"
    class="align-center"
@@ -113,7 +113,7 @@ $$
 %}
 
 
-#### 2D Trajectory token 생성  
+#### 2.5.3 2D Trajectory token 생성  
 
 trajectory 는 intermediate representation 으로 기능한다. EE 의 2D trajectory 를 생성하고, 이 trajectory 를 다음 행동 명령과 함께 예측하도록 학습한다.
 
@@ -123,6 +123,20 @@ trajectory 는 intermediate representation 으로 기능한다. EE 의 2D trajec
    caption="Trajectory 를 화면에 Overlay 한 예시"
    class="align-center"
 %}
+
+#### 2.5.4 전체 생성 파이프라인
+
+$$
+p(d, \tau, a \mid I, T)
+=
+\prod_{i=1}^{M+2} p(d_i \mid I, T, d_{<i})
+\;\times\;
+\prod_{j=1}^{L} p(\tau_j \mid I, T, d, \tau_{<j})
+\;\times\;
+\prod_{k=1}^{D} p(a_k \mid I, T, d, \tau, a_{<k}).
+$$
+
+depth perception token, trajectory token, action token 을 각각 autoregressive 하게 생성함.  
 
 
 
@@ -134,4 +148,4 @@ trajectory 는 intermediate representation 으로 기능한다. EE 의 2D trajec
 
 ## 핵심 contribution 및 기존 논문들과의 차이
 
-# 
+## 한계점/개선 사항  
