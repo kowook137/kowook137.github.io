@@ -69,7 +69,7 @@ MolmoAct 는 action bin 으로 할당할 vocal tail 을 선정할 때, 다음의
 3) 유사한 action 과 vocal tail token 의 monotonic 한 mapping  
 
 {% include figure
-   image_path="/assets/images/robot/action_token_subst.jpg"
+   image_path="/assets/images/robot/action_token_subst.png"
    alt="action token subst"
    caption="MolmoAct 의 Action Token 할당 방식"
    class="align-center"
@@ -137,6 +137,13 @@ p(d, \tau, a \mid I, T)
 $$
 
 depth perception token, trajectory token, action token 을 각각 autoregressive 하게 생성함.  
+
+{% include figure
+   image_path="/assets/images/robot/molmo_architecture.png"
+   alt="MolmoAct inference pipeline"
+   caption="MolmoAct inference pipeline"
+   class="align-center"
+%}  
 
 
 
