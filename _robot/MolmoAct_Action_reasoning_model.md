@@ -82,48 +82,47 @@ MolmoAct 는 action bin 으로 할당할 vocal tail 을 선정할 때, 다음의
 
 #### 2.5.2 Spatial Reasoning 을 위한 Depth perception token  
 
+(1) Teacher (Depth Tokenization)
 
- (1) Teacher (Depth tokenization)
-
-\[
+$$
 \text{Model} \equiv \text{teacher model}
-\]
+$$
 
-\[
+$$
 D \in \mathbb{R}^{H \times W}
 \quad (\text{dense depth map})
-\]
+$$
 
-\[
+$$
 \mathrm{VQ\text{-}VAE} : D \mapsto z^{\text{depth}}
-\]
+$$
 
-\[
+$$
 z^{\text{depth}} = (z_1, \dots, z_L),
 \qquad z_i \in \{1, \dots, 128\}
-\]
+$$
 
-\[
+$$
 \text{Deterministic encoding: }
 z^{\text{depth}} \mapsto d
-\]
+$$
 
-\[
-d = \langle \text{DEPTH\_START} \rangle,\;
-\langle \text{DEPTH\_}z_1 \rangle,\;
-\langle \text{DEPTH\_}z_2 \rangle,\;
-\dots,\;
+$$
+d =
+\langle \text{DEPTH\_START} \rangle,
+\langle \text{DEPTH\_}z_1 \rangle,
+\langle \text{DEPTH\_}z_2 \rangle,
+\dots,
 \langle \text{DEPTH\_END} \rangle
-\]
+$$
 
 ---
 
-  (2) MolmoAct (Distillation target)
+  (2) MolmoAct (Distillation Target)
 
-\[
+$$
 (I, a) \xmapsto{\text{MolmoAct}} \hat{d}^{\text{depth}}
-\]
-
+$$
 
 - $\mathcal{C} = \{c_1, \ldots, c_N\},\; c_k \in \mathbb{R}^d$ 인 코드북에 대해서,
   각 $c_n$ 은 RGB 상에서 depth map 의 국소 패턴을 나타내는 vector.
