@@ -41,14 +41,15 @@ Molmo VLM architecture는 보통의 VLM 과 같이, Vision Encoder 와 LLM 의 �
 
 - Vision Encoder: SigLIP2  
 - LLM backbone: Qwen 2.5 7B
+- Mapping: Language instruction, image to Joint command
 
 ### 2.3 학습 데이터  
 
-OXE, BC-Z, V2, RT-1, Molmo ACT dataset (curated)  
+OXE 일부(정제된 데이터), BC-Z, V2, RT-1, Molmo ACT dataset (curated)  
 
 ### 2.4 GPU hours  
 
-9,216 GPU hours, GR00T 대비 5배 절감
+9,216 GPU hours, GR00T 대비 5배 절감, 256 H
 
 ### 2.5 구현상의 특징  
  
@@ -180,13 +181,229 @@ depth perception token, trajectory token, action token 을 각각 autoregressive
 %}  
 
 
+## 3. Experiments  
 
+MolmoAct의 실험 구성은 아래 4가지.
 
+1) 사전학습 직후 zero-shot generalization 성능  
+2) 훈련 분포 근처에서의 OOD robustness  
+3) Visual reasoning trace를 통한 steerability  
+4) MolmoAct Dataset을 이용한 mid-training 효과  
 
+SOTA 성능 개선을 보이는 실험이 많지 않은 듯 하다(?)
 
+---
 
-## 실험 결과
+### 3.1 Main Manipulation Performance (Zero-shot Generalization)
 
-## 핵심 contribution 및 기존 논문들과의 차이
+#### 3.1.1 Evaluation Setup  
 
-## 한계점/개선 사항  
+사전학습 직후의 **out-of-the-box generalization** 성능을 평가
+- Benchmark: SimplerEnv visual-matching benchmark  
+
+- 플랫폼: WidowX, Google Robot  
+
+- 과업 유형: visual matching 기반 manipulation task  
+
+- 목적:
+  - task-specific fine-tuning 없이
+  - 사전학습만으로 즉시 실행 가능한 generalist policy인지 평가  
+
+MolmoAct-7B-D-PRETRAIN은 다음의 generalist policy들과 비교된다.
+
+- TraceVLA  
+- RT-1X  
+- OpenVLA  
+- RoboVLM  
+- Emma-x  
+- π₀, π₀-FAST  
+- Octo  
+- Magma  
+- HPT  
+- SpatialVLA  
+- GR00T N1.5  
+
+대부분의 baseline은 zero-shot setting에서 평가
+
+---
+
+#### 3.1.2 Evaluation Metric  
+
+- **Task Success Rate (%)**
+  - task를 완전히 성공적으로 완료했는지에 대한 binary metric
+
+---
+
+#### 3.1.3 Results  
+
+MolmoAct-7B-D-PRETRAIN은 SimplerEnv benchmark에서  
+**70.5% zero-shot success rate**를 달성하였다.
+
+이는 GR00T N1.5, π₀, π₀-FAST, Magma를 포함한  
+대부분의 기존 generalist VLA 모델을 상회하는 성능이다.
+
+또한 동일한 RT-1 subset(OXE)으로 fine-tuning을 수행한 경우,  
+성능은 **71.6%**까지 향상되며  
+Magma 대비 **+3.2%p** 우위를 보인다 (Table 1).
+
+이 결과는 MolmoAct가:
+- 강력한 zero-shot generalist이며
+- fine-tuning을 위한 매우 효과적인 initialization임을 시사한다.
+
+{% include figure
+   image_path="/assets/images/robot/table1.png"
+   alt="table1"
+   caption="table1"
+   class="table1"
+%} 
+
+---
+
+### 3.2 Out-of-Distribution Robustness (Generalization Stress Test)
+
+#### 3.2.1 Evaluation Setup  
+
+훈련 분포 근처에서의 **robustness 및 OOD generalization**을 평가하기 위해  
+다양한 변형 조건을 포함한 generalization test를 수행한다 (Section 5.3).
+
+평가 조건은 다음과 같다.
+
+- In-distribution  
+- Language variations  
+- Spatial variations  
+- Distractors  
+- Novel objects  
+
+이 실험은 **zero-shot 성능 평가가 아니라**,  
+fine-tuned policy가 **환경 변형에 얼마나 안정적인지**를 보기 위한 것이다.
+
+---
+
+#### 3.2.2 Evaluation Metric  
+
+- **Task Progression**
+  - 사전에 정의된 중간 단계(milestone)를 얼마나 달성했는지를 점수화한 metric. 즉, task 를 작은 단계로 분해한 것.
+
+task progression 예시는 아래와 같음.
+
+- 0.25: 초기 핵심 단계 달성 (예: grasp)
+- 0.5 / 0.75: 중간 단계
+- 1.0: task 완전 성공  
+
+(progress definition은 Appendix에 있음.)
+
+---
+
+#### 3.2.3 Results  
+
+MolmoAct는 모든 OOD 조건에서  
+OpenVLA, π₀-FAST 대비 **일관되게 높은 task progression**을 기록한다.
+
+특히:
+- spatial variation
+- distractors
+- novel objects  
+
+조건에서 성능 격차가 크게 나타나며,  
+이는 MolmoAct의 structured action reasoning이  
+훈련 분포 근처의 변형에 대해 더 안정적임을 보여준다.
+
+{% include figure
+   image_path="/assets/images/robot/figure6a.png"
+   alt="figure 6a"
+   caption="OOD Task progression"
+   class="OOD Task progression"
+%}
+
+---
+
+### 3.3 Effect of MolmoAct Dataset (Mid-training)
+
+#### 3.3.1 Evaluation Setup  
+
+MolmoAct Dataset(curated action reasoning data)을 사용한  
+**mid-training의 효과**를 평가한다 (Section 5.3).
+
+실제 로봇 과업을 대상으로,
+- MolmoAct (dataset 사용)
+- MolmoAct (dataset 미사용)
+- π₀-FAST
+- OpenVLA
+
+를 비교한다.
+
+대상 task:
+- Close Lid  
+- Rotate Pot  
+- Pour Tea  
+
+---
+
+#### 3.3.2 Evaluation Metric  
+
+- **Task Progression** 
+
+---
+
+#### 3.3.3 Results  
+
+MolmoAct Dataset으로 mid-training을 수행한 경우,
+task progression 이 향상됨.
+
+즉,
+- **action reasoning 중심으로 정제된 데이터**가
+  모델 학습에 효과적임.
+
+{% include figure
+   image_path="/assets/images/robot/figure6b.png"
+   alt="figure 6b"
+   caption="Task progression under mid-training"
+   class="figure6b"
+%}
+
+---
+
+### 3.4 Steerability via Visual Reasoning Traces
+
+#### 3.4.1 Experimental Setup  
+
+MolmoAct는 사용자가 제공하는  
+**2D visual reasoning trace (trajectory)**를 조건으로 받아  
+행동을 조종(steer)할 수 있음.
+
+(Teleop의 새로운 방식 정도인 것 같은데..?)
+
+---
+
+#### 3.4.2 Results (Qualitative & Quantitative)
+
+- 동일한 scene 및 instruction에서도
+- 제공되는 trace에 따라
+- 전혀 다른 manipulation 행동이 생성됨
+
+Trace segment 수가 증가할수록
+task 성공률 및 progression이 향상됨.
+
+이며, **test-time conditioning 입력**에 해당한다.
+
+**Figure 7 (qualitative), Figure 8 (quantitative), Figure 9 (examples), Section 5.4**
+
+---
+
+## 4. Key Contributions
+
+- BPE 를 고려한 Action bin mapping. 즉, 기존의 VLA 보다 더 개선된 action token 할당.  
+
+- Depth perception token 을 auxiliary token 으로 도입. 기존의 LLM 이 학습한 자연어 token 과 별개로 공간을 기술할 수 있는 언어를 만듦.  
+
+## 5. Limitations  
+
+- Hardware embodiment 사이의 generalization 은 실험되지 않음. Google Robot, Widow X robotic Arm을 사용함.  
+
+- camera view 변화, calibration 변화 등에 robust 하지 않음. Generalization 이 아님
+
+- Depth token 이 물리적 metric 이 반영된 것이 아니라 collision 등을 반영하지는 못 하는 것 같고, 그냥 이미지를 더 잘 이해할 수 있게 만든다 정도 아닌가?   
+
+- Depth camera 를 쓰지 않은 이유는 VLM 사전학습 데이터와 맞지 않아서. 그러면 근본적으로 VLM 기반으로 VLA 만드는 건 한계가 있지 않을까?  
+
+- action token 이 joint command 인데, 이러면 근본적으로 embodiment generalization 이 안 되지 않나?
