@@ -386,7 +386,12 @@ task 성공률 및 progression이 향상됨.
 
 이며, **test-time conditioning 입력**에 해당한다.
 
-**Figure 7 (qualitative), Figure 8 (quantitative), Figure 9 (examples), Section 5.4**
+{% include figure
+   image_path="/assets/images/robot/figure7.png"
+   alt="table1"
+   caption="test-time instruction"
+   class="table1"
+%}
 
 ---
 
