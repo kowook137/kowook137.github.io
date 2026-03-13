@@ -23,3 +23,14 @@ Dynamixel 의 기본적인 설정은 Dynamixel Wizard 로 이루어진다.
    caption="Dynamixel Wizard"
    class="Dynamixel wizard"
 %}
+
+### 2. 모터와 PC 통신
+
+보통 Dynamixel 모터는 일반적으로 U2D2 모듈을 통해 PC와 통신한다.
+
+{% include figure
+   image_path="/assets/images/robot/U2D2.png"
+   alt="U2D2"
+   caption="U2D2"
+   class="U2D2"
+%}
