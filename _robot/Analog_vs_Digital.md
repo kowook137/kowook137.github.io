@@ -226,3 +226,10 @@ UART
 
 ## Source
 - DOGlove 제작하면서 배운 것들.
+
+{% include figure
+   image_path="/assets/images/robot/DOGlove.png"
+   alt="DOGlove"
+   caption="DOGlove"
+   class="DOGlove"
+%}
