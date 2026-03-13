@@ -1,7 +1,7 @@
 ---
 title: "Dynamixel 사용"
 date: 2026-03-13
-tags: [Dynamixel, Robotics]]
+tags: [Dynamixel, Robotics]
 toc: true
 ---
 
